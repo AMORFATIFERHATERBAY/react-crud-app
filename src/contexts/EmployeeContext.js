@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
-import Employee from "./Employee";
-import { EmployeeContext } from "../contexts/EmployeeContext";
+import { createContext, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
-const EmployeeList = () => {
-  /* const [employees, setEmployees] = useState([
+export const EmployeeContext = createContext();
+
+const EmployeeContextProvider = (props) => {
+  const [employees, setEmployees] = useState([
     {
       id: uuidv4(),
       name: "Thomas Hardy",
@@ -39,31 +40,13 @@ const EmployeeList = () => {
       address: "Via Monte Bianco 34, Turin, Italy",
       phone: "(480) 631-2097",
     },
-  ]); */
+  ]);
 
-  const { employees } = useContext(EmployeeContext);
   return (
-    <table className="table table-striped table-hover">
-      <thead>
-        <tr>
-          <th>
-            <span className="custom-checkbox">
-              <input type="checkbox" id="selectAll" />
-              <label for="selectAll"></label>
-            </span>
-          </th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Phone</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <Employee employees={employees} />
-      </tbody>
-    </table>
+    <EmployeeContext.Provider value={{ employees }}>
+      {props.children}
+    </EmployeeContext.Provider>
   );
 };
 
-export default EmployeeList;
+export default EmployeeContextProvider;
