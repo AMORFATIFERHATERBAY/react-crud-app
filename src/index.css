@@ -26,6 +26,11 @@ body {
   margin: 5px 0 0;
   font-size: 24px;
 }
+div .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .table-title .btn-group {
   float: right;
 }
@@ -54,9 +59,10 @@ table.table tr td {
   border-color: #e9e9e9;
   padding: 12px 15px;
   vertical-align: middle;
+  font-size: 1rem;
 }
 table.table tr th:first-child {
-  width: 60px;
+  width: 18%;
 }
 table.table tr th:last-child {
   width: 100px;
@@ -140,7 +146,7 @@ table.table .avatar {
   font-size: 13px;
 }
 /* Custom checkbox */
-.custom-checkbox {
+/* .custom-checkbox {
   position: relative;
 }
 .custom-checkbox input[type="checkbox"] {
@@ -189,7 +195,7 @@ table.table .avatar {
   cursor: auto;
   box-shadow: none;
   background: #ddd;
-}
+} */
 /* Modal styles */
 .modal .modal-dialog {
   max-width: 400px;
@@ -224,30 +230,3 @@ table.table .avatar {
 .modal form label {
   font-weight: normal;
 }
-
-/* <script>
-$(document).ready(function(){
-// Activate tooltip
-$('[data-toggle="tooltip"]').tooltip();
-
-// Select/Deselect checkboxes
-var checkbox = $('table tbody input[type="checkbox"]');
-$("#selectAll").click(function(){
-if(this.checked){
-checkbox.each(function(){
-  this.checked = true;                        
-});
-} else{
-checkbox.each(function(){
-  this.checked = false;                        
-});
-} 
-});
-checkbox.click(function(){
-if(!this.checked){
-$("#selectAll").prop("checked", false);
-}
-});
-});
-</script>
- */

@@ -5,17 +5,6 @@ const Employee = ({ employees }) => {
     <>
       {employees.map((employee) => (
         <tr key={employee.id}>
-          <td>
-            <span className="custom-checkbox">
-              <input
-                type="checkbox"
-                id="checkbox1"
-                name="options[]"
-                value="1"
-              />
-              <label for="checkbox1"></label>
-            </span>
-          </td>
           <td>{employee.name}</td>
           <td>{employee.email}</td>
           <td>{employee.address}</td>

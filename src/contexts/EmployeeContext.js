@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 export const EmployeeContext = createContext();
 
 const EmployeeContextProvider = (props) => {
-  const [employees, setEmployees] = useState([
+  const [employees /* setEmployees */] = useState([
     {
       id: uuidv4(),
       name: "Thomas Hardy",
