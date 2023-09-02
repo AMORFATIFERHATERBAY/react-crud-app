@@ -50,7 +50,7 @@ const EmployeeList = () => {
       </table>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header className="modal-header" closeButton>
+        <Modal.Header className="modal-header">
           <Modal.Title>Add new employee</Modal.Title>{" "}
           <i class="fa fa-circle-xmark"></i>
         </Modal.Header>
