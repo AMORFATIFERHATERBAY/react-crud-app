@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Employee from "./Employee";
 import { EmployeeContext } from "../contexts/EmployeeContext";
 import { Modal, Button } from "react-bootstrap";
@@ -10,6 +10,11 @@ const EmployeeList = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    handleClose();
+  }, [employees]);
+
   return (
     <>
       <div className="table-title">
@@ -52,7 +57,6 @@ const EmployeeList = () => {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header className="modal-header">
           <Modal.Title>Add new employee</Modal.Title>{" "}
-          <i class="fa fa-circle-xmark"></i>
         </Modal.Header>
         <Modal.Body>
           <AddEmployeeForm />
