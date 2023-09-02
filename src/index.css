@@ -34,6 +34,9 @@ div .row {
 .table-title .btn-group {
   float: right;
 }
+.btn-ord {
+  padding: 4px;
+}
 .table-title .btn {
   color: #fff;
   float: right;
@@ -65,7 +68,7 @@ table.table tr th:first-child {
   width: 18%;
 }
 table.table tr th:last-child {
-  width: 100px;
+  width: 150px;
 }
 table.table-striped tbody tr:nth-of-type(odd) {
   background-color: #fcfcfc;
